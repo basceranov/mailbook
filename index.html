@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <title>Mailbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">M</div>
+          <div>
+            <div class="brand-name">MAILBOOK</div>
+            <div class="brand-subtitle">Archivio testi</div>
+          </div>
+        </div>
+
+        <div class="sidebar-actions">
+          <button id="newBtn" class="button button-primary button-full">
+            <span>＋</span> Nuovo testo
+          </button>
+        </div>
+
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" class="search-input" type="search" placeholder="Cerca nei testi..." />
+        </div>
+
+        <div class="section-label">TESTI</div>
+        <div id="entryList" class="entry-list"></div>
+
+        <div class="sidebar-footer">
+          <span id="entryCount">0 testi</span>
+          <span id="saveStatus" class="save-status">Salvato</span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">RACCOLTA TESTI MAIL & TICKET</div>
+            <h1 id="headerTitle">Nuovo testo</h1>
+          </div>
+          <div class="topbar-actions">
+            <button id="previewBtn" class="button button-ghost">Anteprima</button>
+            <button id="exportBtn" class="button button-dark">Esporta Word</button>
+          </div>
+        </header>
+
+        <section class="editor-shell">
+          <div class="field-group">
+            <label for="titleInput">Titolo del testo</label>
+            <input id="titleInput" class="title-input" type="text" placeholder="Es. Conferma apertura ticket" />
+          </div>
+
+          <div class="field-group grow">
+            <label>Testo</label>
+
+            <div class="toolbar" id="toolbar">
+              <div class="tool-group">
+                <button class="tool" data-action="bold" title="Grassetto (Ctrl+B)"><b>B</b></button>
+                <button class="tool" data-action="italic" title="Corsivo (Ctrl+I)"><i>I</i></button>
+                <button class="tool" data-action="underline" title="Sottolineato (Ctrl+U)"><u>U</u></button>
+                <button class="tool" data-action="strike" title="Barrato"><s>S</s></button>
+                <button class="tool" data-action="highlight" title="Evidenzia">▣</button>
+              </div>
+
+              <span class="tool-separator"></span>
+
+              <div class="tool-group">
+                <button class="tool" data-action="bulletList" title="Elenco puntato">•≡</button>
+                <button class="tool" data-action="orderedList" title="Elenco numerato">1≡</button>
+              </div>
+
+              <span class="tool-separator"></span>
+
+              <div class="tool-group">
+                <button class="tool" data-action="alignLeft" title="Allinea a sinistra">☰</button>
+                <button class="tool" data-action="alignCenter" title="Centra">≡</button>
+                <button class="tool" data-action="alignRight" title="Allinea a destra">☷</button>
+              </div>
+
+              <span class="tool-separator"></span>
+
+              <div class="tool-group">
+                <button class="tool" data-action="link" title="Inserisci link">↗</button>
+                <button class="tool" data-action="undo" title="Annulla">↶</button>
+                <button class="tool" data-action="redo" title="Ripristina">↷</button>
+              </div>
+            </div>
+
+            <div id="editor" class="editor"></div>
+          </div>
+
+          <div class="editor-footer">
+            <div class="meta">
+              <span id="wordCount">0 parole</span>
+              <span>•</span>
+              <span id="updatedAt">Non ancora salvato</span>
+            </div>
+            <div class="editor-actions">
+              <button id="duplicateBtn" class="button button-ghost" disabled>Duplica</button>
+              <button id="deleteBtn" class="button button-danger" disabled>Elimina</button>
+              <button id="saveBtn" class="button button-primary">Salva</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <dialog id="previewDialog" class="preview-dialog">
+      <div class="preview-header">
+        <div>
+          <div class="eyebrow">ANTEPRIMA DOCUMENTO</div>
+          <h2>Raccolta testi mail e ticket</h2>
+        </div>
+        <button id="closePreviewBtn" class="icon-button">×</button>
+      </div>
+      <div class="preview-body">
+        <div id="documentPreview" class="paper"></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

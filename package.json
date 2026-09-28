@@ -1,0 +1,24 @@
+{
+  "name": "mailbook",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tiptap/core": "^3.6.6",
+    "@tiptap/extension-highlight": "^3.6.6",
+    "@tiptap/extension-link": "^3.6.6",
+    "@tiptap/extension-text-align": "^3.6.6",
+    "@tiptap/extension-underline": "^3.6.6",
+    "@tiptap/starter-kit": "^3.6.6",
+    "docx": "^9.5.1",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "vite": "^7.1.7"
+  }
+}
